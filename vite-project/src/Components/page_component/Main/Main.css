@@ -1,0 +1,79 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background-color: rgba(245, 251, 252, 1);
+    color: #666;
+    font-family: inter;
+}
+
+
+.MenuTitle {
+    color: rgba(53, 184, 190, 1);
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.MenuSubtitle {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.tooltip {
+    color: rgba(53, 184, 190, 1);
+    cursor: pointer;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    top: 340px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.CardListSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ButtonSection {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.more-button {
+    margin-top: 44px;
+}
