@@ -1,0 +1,45 @@
+.main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    background-color: rgba(245, 251, 252, 1);
+    color: #666;
+    font-family: inter;
+}
+
+
+.MenuTitle {
+    color: rgba(53, 184, 190, 1);
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.MenuSubtitle {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.highlight {
+    color: rgba(53, 184, 190, 1);
+}
+
+
+.CardListSection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.ButtonSection {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.more-button {
+    margin-top: 44px;
+}

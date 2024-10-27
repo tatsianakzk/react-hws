@@ -1,0 +1,31 @@
+.custom-button {
+    background-color: white;
+    color: white;
+    border-radius: 12px;
+    padding: 15px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 16px 40px;
+    border-width: 1px;
+    border-color: rgba(97, 114, 131, 0.2);
+    color: black;
+}
+
+.custom-button:hover {
+    background-color: #42a5f5;
+}
+
+.custom-button:active {
+    background-color: #1e88e5;
+}
+
+.custom-button:focus {
+    outline: none;
+}
+
+.custom-button.active-button {
+    background-color: rgba(53, 184, 190, 1);
+    border: none;
+    color: white
+}
