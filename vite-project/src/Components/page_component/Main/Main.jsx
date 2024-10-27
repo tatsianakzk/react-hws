@@ -14,7 +14,7 @@ function Main() {
                 Browse our menu
             </h1>
             <h3 className='MenuSubtitle'>
-                Use our menu to place an order online, or <span className='highlight'>phone </span>our store to place a pickup order. Fast and fresh food.
+                Use our menu to place an order online, or <span className='tooltip'>phone <span className="tooltip-text">+1 (234) 567-890</span></span>our store to place a pickup order. Fast and fresh food.
             </h3>
             <div className='ButtonSection'>
                 <Button text="Desert" isActive />
