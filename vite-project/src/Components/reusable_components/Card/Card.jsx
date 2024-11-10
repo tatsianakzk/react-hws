@@ -1,7 +1,6 @@
-import React from 'react';
+import { Component } from 'react';
 import './Card.css';
-import Button from './../Button/Button'
-
+import Button from '../Button/Button';
 
 const products = [
     {
@@ -48,32 +47,34 @@ const products = [
     },
 ];
 
-function Card({ product }) {
-    return (
-        <div className='Card'>
-
-            <img src={product.image} alt={product.title} className='card-image' />
-            <div className='description-price-input'>
-                <span className='description-price'>
-                    <h3>{product.title}</h3>
-                    <span>{product.price}</span>
-                </span>
-                <p>{product.description}</p>
-
-                <span className='CardInputLine'>
-                    <input type="number" defaultValue="1" min="1" className="CardInput" />
-                    <Button text="Add to cart" isActive />
-                </span>
-
+class Card extends Component {
+    render() {
+        const { product } = this.props;
+        return (
+            <div className='Card'>
+                <img src={product.image} alt={product.title} className='card-image' />
+                <div className='description-price-input'>
+                    <span className='description-price'>
+                        <h3>{product.title}</h3>
+                        <span>{product.price}</span>
+                    </span>
+                    <p>{product.description}</p>
+                    <span className='CardInputLine'>
+                        <input type="number" defaultValue="1" min="1" className="CardInput" />
+                        <Button text="Add to cart" isActive />
+                    </span>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
 }
 
-function CardList() {
-    return products.map((product) => (
-        <Card key={product.id} product={product} />
-    ));
+class CardList extends Component {
+    render() {
+        return products.map((product) => (
+            <Card key={product.id} product={product} />
+        ))
+    }
 }
 
 export default CardList;
