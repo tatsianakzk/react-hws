@@ -1,37 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Main.css';
-import Button from './../../reusable_components/Button/Button';
+import Button from '../../reusable_components/Button/Button';
 import CardList from '../../reusable_components/Card/Card';
 
+const Main = () => {
+    const [selectedCategory, setSelectedCategory] = useState('');
 
+    const handleFilterClick = (category) => {
+        setSelectedCategory(category);
+    };
 
-function Main() {
     return (
-
         <main className="main-section">
-
             <h1 className='MenuTitle'>
                 Browse our menu
             </h1>
             <h3 className='MenuSubtitle'>
-                Use our menu to place an order online, or <span className='tooltip'>phone <span className="tooltip-text">+1 (234) 567-890</span></span>our store to place a pickup order. Fast and fresh food.
+                Use our menu to place an order online, or <span className='tooltip'>phone <span className="tooltip-text">+1 (234) 567-890</span></span> our store to place a pickup order. Fast and fresh food.
             </h3>
             <div className='ButtonSection'>
-                <Button text="Desert" isActive />
-                <Button text="Dinner" />
-                <Button text="Breakfast" />
+                <Button text="Dessert" onClick={() => handleFilterClick('Dessert')} isActive={selectedCategory === 'Dessert'} />
+                <Button text="Dinner" onClick={() => handleFilterClick('Dinner')} isActive={selectedCategory === 'Dinner'} />
+                <Button text="Breakfast" onClick={() => handleFilterClick('Breakfast')} isActive={selectedCategory === 'Breakfast'} />
             </div>
 
-
             <div className='CardListSection'>
-                <CardList />
+                <CardList category={selectedCategory} />
             </div>
 
             <Button text="See more" isActive customClass='more-button' />
-
-
         </main>
     );
-}
+};
 
 export default Main;
