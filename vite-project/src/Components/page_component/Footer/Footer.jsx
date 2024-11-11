@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Footer.css';
 import Sidebar from '../../reusable_components/Sidebar/Sidebar';
 import logo from '../../../assets/icons/logo.png';
@@ -6,9 +6,8 @@ import insta from '../../../assets/icons/insta.png';
 import twitter from '../../../assets/icons/twitter.png';
 import youtube from '../../../assets/icons/youtube.png';
 
-class Footer extends Component {
-
-    sidebarSections = [
+const Footer = () => {
+    const sidebarSections = [
         {
             title: 'COMPANY',
             links: [
@@ -34,52 +33,45 @@ class Footer extends Component {
             ],
         },
     ];
-
-
-    socialLinks = [
+    const socialLinks = [
         { src: insta, alt: 'Instagram Logo', link: 'https://www.instagram.com' },
         { src: twitter, alt: 'Twitter Logo', link: 'https://www.twitter.com' },
         { src: youtube, alt: 'YouTube Logo', link: 'https://www.youtube.com' },
     ];
 
-    render() {
-        return (
-            <footer className="footer">
-                <div className="footer-container container">
-                    <div className="footer-info">
-                        <img src={logo} alt="Logo" className="footer-logo" />
-                        <p className="footer-description">
-                            Takeaway & Delivery template for small - medium businesses.
-                        </p>
-                    </div>
+    return (
+        <footer className="footer">
+            <div className="footer-container container">
+                <div className="footer-info">
+                    <img src={logo} alt="Logo" className="footer-logo" />
+                    <p className="footer-description">
+                        Takeaway & Delivery template for small - medium businesses.
+                    </p>
+                </div>
+                {sidebarSections.map((section) => (
+                    <Sidebar key={section.title} title={section.title} items={section.links} />
+                ))}
+            </div>
 
-
-                    {this.sidebarSections.map((section) => (
-                        <Sidebar key={section.title} title={section.title} items={section.links} />
+            <div className="footer-bottom">
+                <p>
+                    Built by <a href="https://flowbase.co" className="footer-bottom-link">Flowbase</a> · Powered by <a href="https://webflow.com" className="footer-bottom-link">Webflow</a>
+                </p>
+                <div className="footer-socials">
+                    {socialLinks.map((social) => (
+                        <a
+                            key={social.alt}
+                            href={social.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img src={social.src} alt={social.alt} className="footer-social-link" />
+                        </a>
                     ))}
                 </div>
-
-                <div className="footer-bottom">
-                    <p>
-                        Built by <a href="https://flowbase.co" className="footer-bottom-link">Flowbase</a> · Powered by <a href="https://webflow.com" className="footer-bottom-link">Webflow</a>
-                    </p>
-                    <div className="footer-socials">
-
-                        {this.socialLinks.map((social) => (
-                            <a
-                                key={social.alt}
-                                href={social.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img src={social.src} alt={social.alt} className="footer-social-link" />
-                            </a>
-                        ))}
-                    </div>
-                </div>
-            </footer>
-        );
-    }
-}
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;
