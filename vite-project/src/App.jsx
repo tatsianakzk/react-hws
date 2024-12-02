@@ -3,12 +3,14 @@ import './App.css';
 import Header from './Components/page_component/Header/Header';
 import Main from './Components/page_component/Main/Main';
 import Footer from './Components/page_component/Footer/Footer';
+import Home from './Components/Pages/Home/Home'
+import Menu from './Components/Pages/Menu/Menu'
 
 const App = () => {
   return (
     <>
       <Header />
-      <Main />
+      <Home />
       <Footer />
     </>
   );
