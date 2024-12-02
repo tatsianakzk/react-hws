@@ -1,19 +1,14 @@
 import React from 'react';
 import './Sidebar.css';
 
-interface SidebarProps {
-    title: string;
-    items: { name: string; link: string }[];
-}
-
-const Sidebar: React.FC<SidebarProps> = ({ title, items }) => {
+const Sidebar = ({ title, items }) => {
     return (
         <aside className="sidebar">
             <h2 className="sidebar-title">{title}</h2>
             <nav className="sidebar-nav">
-                {items.map((item, index) => (
+                {items.map((item) => (
                     <a
-                        key={index}
+                        key={item.id}
                         href={item.link}
                         className="sidebar-item"
                     >
