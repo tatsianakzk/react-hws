@@ -1,16 +1,18 @@
-import React from 'react';
-import './Sidebar.css';
+import React, { useId } from "react";
+import "./Sidebar.css";
 
 const Sidebar = ({ title, items }) => {
+    const id = useId();
+
     return (
         <aside className="sidebar">
-            <h2 className="sidebar-title">{title}</h2>
-            <nav className="sidebar-nav">
-                {items.map((item) => (
+            <h2 className="sidebarTitle">{title}</h2>
+            <nav className="sidebarNav">
+                {items.map((item, index) => (
                     <a
-                        key={item.id}
+                        key={`${id}-${index}`}
                         href={item.link}
-                        className="sidebar-item"
+                        className="sidebarKey"
                     >
                         {item.name}
                     </a>

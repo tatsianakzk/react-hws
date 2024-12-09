@@ -5,12 +5,13 @@ import Main from './Components/page_component/Main/Main';
 import Footer from './Components/page_component/Footer/Footer';
 import Home from './Components/Pages/Home/Home'
 import Menu from './Components/Pages/Menu/Menu'
+import Login from './Components/Pages/Login/Login';
 
 const App = () => {
   return (
     <>
       <Header />
-      <Home />
+      <Login />
       <Footer />
     </>
   );
