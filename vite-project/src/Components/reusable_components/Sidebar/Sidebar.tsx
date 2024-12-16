@@ -1,11 +1,21 @@
 import React, { useId } from "react";
 import "./Sidebar.css";
 
-const Sidebar = ({ title, items }) => {
+interface SidebarItem {
+    name: string;
+    link: string;
+}
+
+interface SidebarProps {
+    title: string;
+    items: SidebarItem[];
+}
+
+function Sidebar({ title, items }: SidebarProps) {
     const id = useId();
 
     return (
-        <aside className="sidebar">
+        <div className="sidebar">
             <h2 className="sidebarTitle">{title}</h2>
             <nav className="sidebarNav">
                 {items.map((item, index) => (
@@ -18,8 +28,8 @@ const Sidebar = ({ title, items }) => {
                     </a>
                 ))}
             </nav>
-        </aside>
+        </div>
     );
-};
+}
 
 export default Sidebar;

@@ -6,8 +6,24 @@ import insta from '../../../assets/icons/insta.png';
 import twitter from '../../../assets/icons/twitter.png';
 import youtube from '../../../assets/icons/youtube.png';
 
-const Footer = () => {
-    const sidebarSections = [
+type Link = {
+    name: string;
+    link: string;
+};
+
+type SidebarSection = {
+    title: string;
+    links: Link[];
+};
+
+type SocialLink = {
+    src: string;
+    alt: string;
+    link: string;
+};
+
+function Footer() {
+    const sidebarSections: SidebarSection[] = [
         {
             title: 'COMPANY',
             links: [
@@ -33,7 +49,8 @@ const Footer = () => {
             ],
         },
     ];
-    const socialLinks = [
+
+    const socialLinks: SocialLink[] = [
         { src: insta, alt: 'Instagram Logo', link: 'https://www.instagram.com' },
         { src: twitter, alt: 'Twitter Logo', link: 'https://www.twitter.com' },
         { src: youtube, alt: 'YouTube Logo', link: 'https://www.youtube.com' },
@@ -55,7 +72,14 @@ const Footer = () => {
 
             <div className="footer-bottom">
                 <p>
-                    Built by <a href="https://flowbase.co" className="footer-bottom-link">Flowbase</a> · Powered by <a href="https://webflow.com" className="footer-bottom-link">Webflow</a>
+                    Built by{' '}
+                    <a href="https://flowbase.co" className="footer-bottom-link">
+                        Flowbase
+                    </a>{' '}
+                    · Powered by{' '}
+                    <a href="https://webflow.com" className="footer-bottom-link">
+                        Webflow
+                    </a>
                 </p>
                 <div className="footer-socials">
                     {socialLinks.map((social) => (
@@ -72,6 +96,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+}
 
 export default Footer;

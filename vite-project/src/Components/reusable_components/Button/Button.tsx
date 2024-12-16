@@ -1,7 +1,14 @@
 import React from 'react';
 import './Button.css';
 
-const Button = ({ text, onClick, isActive = false, customClass = '' }) => {
+interface ButtonProps {
+    text: string;
+    onClick?: () => void;
+    isActive?: boolean;
+    customClass?: string;
+}
+
+function Button({ text, onClick, isActive = false, customClass = '' }: ButtonProps) {
     return (
         <button
             className={`custom-button ${isActive ? 'active-button' : ''} ${customClass}`}
@@ -10,6 +17,6 @@ const Button = ({ text, onClick, isActive = false, customClass = '' }) => {
             {text}
         </button>
     );
-};
+}
 
 export default Button;

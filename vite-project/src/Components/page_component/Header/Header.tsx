@@ -3,7 +3,7 @@ import './Header.css';
 import logo from './../../../assets/icons/logo.png';
 import cart from './../../../assets/icons/cart.png';
 
-const Header = () => {
+function Header() {
     return (
         <header className="header container">
             <div className="logo">
@@ -22,6 +22,6 @@ const Header = () => {
             </div>
         </header>
     );
-};
+}
 
 export default Header;

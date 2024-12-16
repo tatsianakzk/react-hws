@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./login.css";
 
-const Login = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [message, setMessage] = useState("");
+function Login() {
+    const [username, setUsername] = useState<string>("");
+    const [password, setPassword] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
 
-    const handleLoginOrRegister = (e) => {
+    const handleLoginOrRegister = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const users = JSON.parse(localStorage.getItem("users")) || [];
+        const users: Array<{ username: string; password: string; }> = JSON.parse(localStorage.getItem("users") || "[]");
 
         const userExists = users.find((user) => user.username === username);
 
@@ -32,7 +32,7 @@ const Login = () => {
     return (
         <div className="loginContainer">
             <div className="loginBox">
-                <h2>Register or Log in </h2>
+                <h2>Register or Log in</h2>
                 {message && <p className="message">{message}</p>}
                 <form onSubmit={handleLoginOrRegister}>
                     <div className="formGroup">
@@ -44,8 +44,7 @@ const Login = () => {
                             placeholder="UserName"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
+                            required />
                     </div>
                     <div className="formGroup">
                         <label htmlFor="password">Password</label>
@@ -56,8 +55,7 @@ const Login = () => {
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
+                            required />
                     </div>
                     <div className="buttonGroup">
                         <button type="submit" className="submitButton">
@@ -79,6 +77,6 @@ const Login = () => {
             </div>
         </div>
     );
-};
+}
 
 export default Login;
