@@ -2,19 +2,21 @@ import React from 'react';
 import './Button.css';
 
 interface ButtonProps {
-    text: string
-    onClick?: () => void
-    isActive?: boolean
-    customClass: string
+    text: string;
+    onClick?: () => void;
+    isActive?: boolean;
+    customClass?: string;
 }
 
-
-const Button: React.FC<ButtonProps> = ({ text, onClick, isActive, customClass }) => {
+function Button({ text, onClick, isActive = false, customClass = '' }: ButtonProps) {
     return (
-        <button className={`custom-button ${isActive ? 'active-button' : ''} ${customClass ?? ''}`} onClick={onClick}>
+        <button
+            className={`custom-button ${isActive ? 'active-button' : ''} ${customClass}`}
+            onClick={onClick}
+        >
             {text}
         </button>
     );
-};
+}
 
 export default Button;
