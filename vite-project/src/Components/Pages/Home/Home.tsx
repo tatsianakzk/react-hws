@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import star from "../../../assets/icons/star.png";
-import main_img from "../../../assets/pictures/main_img.png";
-import useFetch from "../../hooks/useFetch";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import star from '../../../assets/icons/star.png';
+import main_img from '../../../assets/pictures/main_img.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState, AppDispatch } from '../../../redux/store';
+import { fetchInitialData, placeOrder } from '../../../redux/slices/homeSlice';
 
 const HomeContainer = styled.main`
   display: flex;
@@ -107,70 +109,48 @@ const HomeImage = styled.div`
 `;
 
 const Home: React.FC = () => {
-  const { fetchData, isLoading, error } = useFetch();
-  const [orderError, setOrderError] = useState<string | null>(null);
-
-  const handleOrderClick = async () => {
-    setOrderError(null);
-    try {
-      const response = await fetchData({
-        url: "https://jsonplaceholder.typicode.com/posts",
-        options: {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ order: "Burger", quantity: 1 }),
-        },
-      });
-      console.log("Order Response:", response);
-    } catch (err) {
-      console.error("Order failed:", err);
-      setOrderError("Failed to place order. Please try again.");
-    }
-  };
+  const dispatch = useDispatch<AppDispatch>();
+  const { isLoading, error } = useSelector((state: RootState) => state.home);
 
   useEffect(() => {
-    const fetchInitialData = async () => {
-      try {
-        const response = await fetchData({
-          url: "https://jsonplaceholder.typicode.com/posts",
-        });
-        console.log("Initial data fetched:", response);
-      } catch (err) {
-        console.error("Failed to fetch initial data:", err);
-      }
-    };
+    dispatch(fetchInitialData());
+  }, [dispatch]);
 
-    fetchInitialData();
-  }, [fetchData]);
+  const handleOrderClick = () => {
+    dispatch(placeOrder({ order: 'Burger', quantity: 1 }));
+  };
 
   return (
     <HomeContainer>
-      <HomeContent>
-        <HomeHeading>
-          Beautiful food & takeaway, <span className="highlight">delivered</span> to your door.
-        </HomeHeading>
-        <HomeDescription>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-        </HomeDescription>
+      <div>
+        <h1>
+          Beautiful food & takeaway, <span style={{ color: 'rgba(53, 184, 190, 1)' }}>delivered</span> to your door.
+        </h1>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s.
+        </p>
         <Button onClick={handleOrderClick} disabled={isLoading}>
-          {isLoading ? "Placing Order..." : "Place an Order"}
+          {isLoading ? 'Placing Order...' : 'Place an Order'}
         </Button>
-        {orderError && <p style={{ color: "red", marginTop: "1rem" }}>{orderError}</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <Trustpilot>
           <div>
             <img src={star} alt="Trustpilot" />
             <p>Trustpilot</p>
+            <p>
+              <span style={{ color: 'rgba(53, 184, 190, 1)', fontWeight: 'bold' }}>4.8 out of 5</span> based on 2000+
+              reviews
+            </p>
           </div>
-          <p className="reviewText">
-            <span className="trustpilot-rating">4.8 out of 5</span> based on 2000+ reviews
-          </p>
         </Trustpilot>
-      </HomeContent>
-      <HomeImage>
+      </div>
+      <div>
         <img src={main_img} alt="Delicious food" />
-      </HomeImage>
+      </div>
     </HomeContainer>
   );
 };
 
 export default Home;
+

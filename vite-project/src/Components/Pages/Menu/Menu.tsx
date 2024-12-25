@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Menu.css';
 import Button from '../../reusable_components/Button/Button';
 import CardList from '../../reusable_components/Card/Card';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, AppDispatch } from '../../../redux/store';
+import { setCategory } from '../../../redux/slices/menuSlice';
 
 function Menu() {
-    const [selectedCategory, setSelectedCategory] = useState<string>('');
+    const dispatch = useDispatch<AppDispatch>();
+    const selectedCategory = useSelector((state: RootState) => state.menu.selectedCategory);
 
     const handleFilterClick = (category: string): void => {
-        setSelectedCategory(category);
+        dispatch(setCategory(category));
     };
 
     return (
@@ -46,3 +50,5 @@ function Menu() {
 }
 
 export default Menu;
+
+
