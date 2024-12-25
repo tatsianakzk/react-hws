@@ -1,4 +1,4 @@
-.main-section {
+.MenuSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,6 +60,7 @@
     opacity: 1;
 }
 
+
 .CardListSection {
     display: flex;
     flex-wrap: wrap;
@@ -76,4 +77,11 @@
 
 .more-button {
     margin-top: 44px;
+}
+
+.CardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }

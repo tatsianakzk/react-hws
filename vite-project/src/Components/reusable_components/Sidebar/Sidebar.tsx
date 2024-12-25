@@ -1,28 +1,35 @@
-import React from 'react';
-import './Sidebar.css';
+import React, { useId } from "react";
+import "./Sidebar.css";
+
+interface SidebarItem {
+    name: string;
+    link: string;
+}
 
 interface SidebarProps {
     title: string;
-    items: { name: string; link: string }[];
+    items: SidebarItem[];
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ title, items }) => {
+function Sidebar({ title, items }: SidebarProps) {
+    const id = useId();
+
     return (
-        <aside className="sidebar">
-            <h2 className="sidebar-title">{title}</h2>
-            <nav className="sidebar-nav">
+        <div className="sidebar">
+            <h2 className="sidebarTitle">{title}</h2>
+            <nav className="sidebarNav">
                 {items.map((item, index) => (
                     <a
-                        key={index}
+                        key={`${id}-${index}`}
                         href={item.link}
-                        className="sidebar-item"
+                        className="sidebarKey"
                     >
                         {item.name}
                     </a>
                 ))}
             </nav>
-        </aside>
+        </div>
     );
-};
+}
 
 export default Sidebar;
