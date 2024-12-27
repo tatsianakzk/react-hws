@@ -5,6 +5,7 @@ import main_img from '../../../assets/pictures/main_img.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../../redux/store';
 import { fetchInitialData, placeOrder } from '../../../redux/slices/homeSlice';
+import { useNavigate } from 'react-router-dom';
 
 const HomeContainer = styled.main`
   display: flex;
@@ -116,8 +117,9 @@ const Home: React.FC = () => {
     dispatch(fetchInitialData());
   }, [dispatch]);
 
+  const navigate = useNavigate();
   const handleOrderClick = () => {
-    dispatch(placeOrder({ order: 'Burger', quantity: 1 }));
+    navigate('/menu');
   };
 
   return (

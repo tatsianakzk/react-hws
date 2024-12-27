@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Menu.css';
 import Button from '../../reusable_components/Button/Button';
 import CardList from '../../reusable_components/Card/Card';
@@ -12,6 +12,18 @@ function Menu() {
 
     const handleFilterClick = (category: string): void => {
         dispatch(setCategory(category));
+        setVisibleCount(6);
+    };
+
+    const [visibleCount, setVisibleCount] = useState(6);
+
+
+    const handleSeeMore = () => {
+        setVisibleCount(function (prevCount) {
+            const newCount = prevCount + 6; // Увеличиваем количество карточек
+            console.log('Updated visibleCount:', newCount);
+            return newCount;
+        });
     };
 
     return (
@@ -21,7 +33,7 @@ function Menu() {
                 Use our menu to place an order online, or{' '}
                 <span className="tooltip">
                     phone{' '}
-                    <span className="tooltip-text">+1 (234) 567-890</span>
+                    <span className="tooltipText">+1 (234) 567-890</span>
                 </span>{' '}
                 our store to place a pickup order. Fast and fresh food.
             </h3>
@@ -41,10 +53,10 @@ function Menu() {
             </div>
 
             <div className="CardListSection">
-                <CardList category={selectedCategory} />
+                <CardList category={selectedCategory} visibleCount={visibleCount} />
             </div>
 
-            <Button text="See more" isActive={false} customClass="more-button" />
+            <Button text="See more" isActive={true} customClass="SeeMoreBtn" onClick={handleSeeMore} />
         </div>
     );
 }

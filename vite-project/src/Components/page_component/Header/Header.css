@@ -1,4 +1,4 @@
-.header {
+.headerContainer {
     background-color: white;
     padding-left: 5%;
     padding-right: 5%;
@@ -9,43 +9,51 @@
     height: 100px;
 }
 
-
-.logo {
+.headerLogo {
     display: flex;
     align-items: center;
 }
 
-.logo-img {
+.headerLogoImg {
     height: 40px;
 }
 
-.nav {
+.headerNav {
     display: flex;
     gap: 20px;
     margin-left: auto;
 }
 
-.nav-link {
+.headerNavLink {
     color: #2c2c2c;
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
 }
 
-.nav-link_home {
+.headerNavLinkHome {
     color: rgba(53, 184, 190, 1);
 }
 
-.nav-link_home:hover {
+.headerNavLinkHome:hover {
     color: black;
 }
 
-.nav-link:hover {
+.headerNavLink:hover {
     color: rgba(53, 184, 190, 1);
 }
 
+.headerCart {
+    display: flex;
+    align-items: center;
+}
 
-.cart-icon img {
+.headerCartIcon {
+    display: flex;
+    align-items: center;
+}
+
+.headerCartImg {
     height: 40px;
     width: 40px;
     border-radius: 8px;

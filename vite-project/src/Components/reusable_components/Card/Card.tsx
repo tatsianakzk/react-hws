@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Card.css';
 import Button from '../Button/Button';
+import { useDispatch } from 'react-redux';
+import { addItemToOrder } from '../../../redux/slices/orderSlice';
 
 interface Product {
     id: string;
@@ -15,36 +17,15 @@ interface CardProps {
     product: Product;
 }
 
-function Card({ product }: CardProps) {
-    return (
-        <div className="Card">
-            <img src={product.image} alt={product.title} className="card-image" />
-            <div className="description-price-input">
-                <span className="description-price">
-                    <h3>{product.title}</h3>
-                    <span>${product.price.toFixed(2)}</span>
-                </span>
-                <p>{product.description}</p>
-                <span className="CardInputLine">
-                    <input
-                        type="number"
-                        defaultValue="1"
-                        min="1"
-                        className="CardInput" />
-                    <Button text="Add to cart" isActive />
-                </span>
-            </div>
-        </div>
-    );
-}
-
 interface CardListProps {
     category?: string;
+    visibleCount: number;
 }
 
-function CardList({ category }: CardListProps) {
+function CardList({ category, visibleCount }: CardListProps) {
     const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -82,11 +63,61 @@ function CardList({ category }: CardListProps) {
         ? products.filter((product) => product.category === category)
         : products;
 
+    const visibleProducts = filteredProducts.slice(0, visibleCount);
+
+    console.log('Filtered products:', filteredProducts);
+    console.log('Visible products:', visibleProducts);
+
     return (
         <div className="CardList">
-            {filteredProducts.map((product) => (
+            {visibleProducts.map((product) => (
                 <Card key={product.id} product={product} />
             ))}
+        </div>
+    );
+}
+
+function Card({ product }: CardProps) {
+    const dispatch = useDispatch();
+
+    const handleAddToCart = () => {
+        const quantity = parseInt(
+            (document.getElementById(`quantity-${product.id}`) as HTMLInputElement).value,
+            10
+        );
+        if (quantity > 0) {
+            dispatch(
+                addItemToOrder({
+                    id: product.id,
+                    name: product.title,
+                    image: product.image,
+                    price: product.price,
+                    quantity,
+                })
+            );
+        }
+    };
+
+    return (
+        <div className="Card">
+            <img src={product.image} alt={product.title} className="cardImage" />
+            <div className="descriptionPriceInput">
+                <span className="descriptionPrice">
+                    <h3>{product.title}</h3>
+                    <span>${product.price.toFixed(2)}</span>
+                </span>
+                <p>{product.description}</p>
+                <span className="CardInputLine">
+                    <input
+                        id={`quantity-${product.id}`}
+                        type="number"
+                        defaultValue="1"
+                        min="1"
+                        className="CardInput"
+                    />
+                    <Button text="Add to cart" isActive onClick={handleAddToCart} customClass="AddToCartBtn" />
+                </span>
+            </div>
         </div>
     );
 }

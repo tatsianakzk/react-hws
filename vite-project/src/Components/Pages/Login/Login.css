@@ -80,3 +80,7 @@
 .cancelButton:hover {
     background-color: #f0f0f0;
 }
+
+.message {
+    color: #359090;
+}

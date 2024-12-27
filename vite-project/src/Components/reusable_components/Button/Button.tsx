@@ -11,7 +11,7 @@ interface ButtonProps {
 function Button({ text, onClick, isActive = false, customClass = '' }: ButtonProps) {
     return (
         <button
-            className={`custom-button ${isActive ? 'active-button' : ''} ${customClass}`}
+            className={`customButton ${isActive ? 'activeButton' : ''} ${customClass}`}
             onClick={onClick}
         >
             {text}

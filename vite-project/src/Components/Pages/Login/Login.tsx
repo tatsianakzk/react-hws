@@ -15,12 +15,18 @@ function Login() {
         e.preventDefault();
 
         const users = JSON.parse(localStorage.getItem('users') || '[]');
-        const userExists = users.find((user: { username: string }) => user.username === username);
+        const userExists = users.find((user: { username: string; password: string }) =>
+            user.username === username && user.password === password
+        );
 
         if (userExists) {
             dispatch(login({ username, password }));
+            localStorage.setItem('authToken', 'your-auth-token');
+            window.location.href = '/home';
         } else {
             dispatch(register({ username, password }));
+            localStorage.setItem('authToken', 'your-auth-token');
+            window.location.href = '/home';
         }
     };
 

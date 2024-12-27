@@ -25,7 +25,7 @@ type SocialLink = {
 function Footer() {
     const sidebarSections: SidebarSection[] = [
         {
-            title: 'COMPANY',
+            title: 'Company',
             links: [
                 { name: 'Home', link: `https://www.google.com/search?q=Home` },
                 { name: 'Order', link: `https://www.google.com/search?q=Order` },
@@ -34,7 +34,7 @@ function Footer() {
             ],
         },
         {
-            title: 'TEMPLATE',
+            title: 'Template',
             links: [
                 { name: 'Style Guide', link: `https://www.google.com/search?q=Style+Guide` },
                 { name: 'Changelog', link: `https://www.google.com/search?q=Changelog` },
@@ -43,7 +43,7 @@ function Footer() {
             ],
         },
         {
-            title: 'FLOWBASE',
+            title: 'Flowbase',
             links: [
                 { name: 'More Cloneables', link: `https://www.google.com/search?q=More+Cloneables` },
             ],
@@ -51,17 +51,17 @@ function Footer() {
     ];
 
     const socialLinks: SocialLink[] = [
-        { src: insta, alt: 'Instagram Logo', link: 'https://www.instagram.com' },
-        { src: twitter, alt: 'Twitter Logo', link: 'https://www.twitter.com' },
-        { src: youtube, alt: 'YouTube Logo', link: 'https://www.youtube.com' },
+        { src: insta, alt: 'InstagramLogo', link: 'https://www.instagram.com' },
+        { src: twitter, alt: 'TwitterLogo', link: 'https://www.twitter.com' },
+        { src: youtube, alt: 'YouTubeLogo', link: 'https://www.youtube.com' },
     ];
 
     return (
         <footer className="footer">
-            <div className="footer-container container">
-                <div className="footer-info">
-                    <img src={logo} alt="Logo" className="footer-logo" />
-                    <p className="footer-description">
+            <div className="footerContainer container">
+                <div className="footerInfo">
+                    <img src={logo} alt="Logo" className="footerLogo" />
+                    <p className="footerDescription">
                         Takeaway & Delivery template for small - medium businesses.
                     </p>
                 </div>
@@ -70,18 +70,18 @@ function Footer() {
                 ))}
             </div>
 
-            <div className="footer-bottom">
+            <div className="footerBottom">
                 <p>
                     Built by{' '}
-                    <a href="https://flowbase.co" className="footer-bottom-link">
+                    <a href="https://flowbase.co" className="footerBottomLink">
                         Flowbase
                     </a>{' '}
                     · Powered by{' '}
-                    <a href="https://webflow.com" className="footer-bottom-link">
+                    <a href="https://webflow.com" className="footerBottomLink">
                         Webflow
                     </a>
                 </p>
-                <div className="footer-socials">
+                <div className="footerSocials">
                     {socialLinks.map((social) => (
                         <a
                             key={social.alt}
@@ -89,7 +89,7 @@ function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img src={social.src} alt={social.alt} className="footer-social-link" />
+                            <img src={social.src} alt={social.alt} className="footerSocialLink" />
                         </a>
                     ))}
                 </div>
