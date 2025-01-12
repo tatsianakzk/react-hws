@@ -1,5 +1,5 @@
-.custom-button {
-    background-color: white;
+.customButton {
+    background-color: rgba(53, 184, 190, 1);
     color: white;
     border-radius: 12px;
     padding: 15px 30px;
@@ -9,22 +9,21 @@
     padding: 16px 40px;
     border-width: 1px;
     border-color: rgba(97, 114, 131, 0.2);
-    color: black;
 }
 
-.custom-button:hover {
-    background-color: #42a5f5;
+.customButton:hover {
+    background-color: rgba(45, 150, 155, 1);
 }
 
-.custom-button:active {
-    background-color: #1e88e5;
+.customButton:active {
+    background-color: rgba(45, 150, 155, 1);
 }
 
-.custom-button:focus {
+.customButton:focus {
     outline: none;
 }
 
-.custom-button.active-button {
+.customButton.active-button {
     background-color: rgba(53, 184, 190, 1);
     border: none;
     color: white

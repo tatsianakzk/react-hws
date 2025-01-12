@@ -16,7 +16,7 @@
 }
 
 
-.description-price-input {
+.descriptionPriceInput {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -24,13 +24,13 @@
 
 }
 
-.description-price {
+.descriptionPrice {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card-image {
+.cardImage {
     width: 120px;
     height: 120px;
     border-radius: 8px;
@@ -62,4 +62,8 @@
 
 .CardInputLine {
     display: flex;
+}
+
+.AddToCartBtn:hover {
+    background-color: rgba(45, 150, 155, 1);
 }
