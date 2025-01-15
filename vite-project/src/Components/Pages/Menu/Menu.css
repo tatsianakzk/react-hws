@@ -1,12 +1,12 @@
-.main-section {
+.MenuSection {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 5%;
-    background-color: rgba(245, 251, 252, 1);
     color: #666;
     font-family: inter;
+    background-color: var(--main-footer-background-color);
 }
 
 
@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-.tooltip-text {
+.tooltipText {
     visibility: hidden;
     width: 120px;
     background-color: #333;
@@ -44,7 +44,7 @@
     z-index: 1;
 }
 
-.tooltip-text::after {
+.tooltipText::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -55,10 +55,11 @@
     border-color: #333 transparent transparent transparent;
 }
 
-.tooltip:hover .tooltip-text {
+.tooltip:hover .tooltipText {
     visibility: visible;
     opacity: 1;
 }
+
 
 .CardListSection {
     display: flex;
@@ -74,6 +75,13 @@
     margin-top: 50px;
 }
 
-.more-button {
-    margin-top: 44px;
+.CardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.SeeMoreBtn:hover {
+    background-color: rgba(45, 150, 155, 1);
 }

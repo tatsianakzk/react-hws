@@ -1,0 +1,48 @@
+:root {
+    --global-background-color: white;
+    --header-background-color: rgb(248, 250, 249);
+    --global-text-color: black;
+    --main-footer-background-color: rgb(235, 245, 247);
+    --font-color: #6E6E6E;
+    --button-font-color: white;
+    --card-background-color: white;
+    --card-outline: white;
+    --loginform-input-background-color: white;
+    --loginform-input-outlone-color: black;
+    --sidebar-title-font-color: #333;
+    --button-background-color: rgba(53, 184, 190, 1);
+    --card-input-background-color: white;
+    --card-input-outline-color: black;
+    --login-cancel-button-backgroud-color: white;
+    --login-cancel-button-outline-color: black;
+    --login-input-background-color: black;
+    --order-item-card-background: rgb(248, 250, 249);
+    --order-card-name-fornt-color: #333;
+    --order-card-qtyinput-background-color: white;
+    --order-card-qtyinput-outline-color: black;
+}
+
+
+[data-theme="dark"] {
+    --global-background-color: #262525;
+    --header-background-color: rgb(35, 34, 34);
+    --text-color: #ffffff;
+    --main-footer-background-color: #121212;
+    --font-color: #6E6E6E;
+    --button-font-color: rgb(0, 0, 0);
+    --card-background-color: #262525;
+    --card-outline: black;
+    --header-font-color: rgb(169, 163, 163);
+    --loginform-input-background-color: rgb(113, 108, 108);
+    --loginform-input-outlone-color: rgb(113, 108, 108);
+    --sidebar-title-font-color: #333;
+    --card-input-background-color: rgb(82, 80, 80);
+    --card-input-outline-color: rgb(138, 134, 134);
+    --login-cancel-button-backgroud-color: rgb(112, 109, 109);
+    --login-cancel-button-outline-color: rgb(112, 109, 109);
+    --login-input-background-color: white;
+    --order-item-card-background: rgb(35, 34, 34);
+    --order-card-name-fornt-color: rgb(112, 109, 109);
+    --order-card-qtyinput-background-color: rgb(82, 80, 80);
+    --order-card-qtyinput-outline-color: rgb(82, 80, 80);
+}

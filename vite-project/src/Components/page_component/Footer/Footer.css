@@ -1,70 +1,69 @@
+@import './../../../context/Themes.css';
+
 .footer {
     display: flex;
     flex-direction: column;
     padding-top: 100px;
     padding: 0 120px;
-    background-color: rgba(245, 251, 252, 1);
+    background-color: var(--main-footer-background-color);
     margin-top: auto;
 }
 
-.footer-container {
+.footerContainer {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;
-    width: 80%;
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
 }
 
-.footer-info {
+.footerInfo {
     max-width: 200px;
 }
 
-.footer-logo {
+.footerLogo {
     width: 36px;
     margin-bottom: 10px;
-
 }
 
-.footer-description {
+.footerDescription {
     font-size: 15px;
-    color: #4a4a4a;
 }
 
-
-.footer-link {
-    color: #4a4a4a;
+.footerLink {
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.footer-link:hover {
+.footerLink:hover {
     color: rgba(53, 184, 190, 1);
 }
 
-.footer-bottom {
+.footerBottom {
     display: flex;
     width: 100%;
     justify-content: space-between;
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #e0e0e0;
-    color: black;
     padding-top: 70px;
     padding-bottom: 70px;
 }
 
-.footer-bottom-link {
+.footerBottomLink {
     color: rgba(53, 184, 190, 1);
     text-decoration: none;
 }
 
-.footer-bottom-link:hover {
+.footerBottomLink:hover {
     text-decoration: underline;
 }
 
-.footer-socials {
+.footerSocials {
     display: flex;
     justify-content: center;
     gap: 15px;
