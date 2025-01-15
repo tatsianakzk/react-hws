@@ -1,6 +1,6 @@
 .customButton {
-    background-color: rgba(53, 184, 190, 1);
-    color: white;
+    background-color: var(--button-background-color);
+    color: var(--button-font-color);
     border-radius: 12px;
     padding: 15px 30px;
     font-weight: bold;
@@ -13,18 +13,14 @@
 
 .customButton:hover {
     background-color: rgba(45, 150, 155, 1);
+    transform: scale(1.05);
 }
 
 .customButton:active {
     background-color: rgba(45, 150, 155, 1);
+    transform: scale(1.05);
 }
 
 .customButton:focus {
     outline: none;
-}
-
-.customButton.active-button {
-    background-color: rgba(53, 184, 190, 1);
-    border: none;
-    color: white
 }

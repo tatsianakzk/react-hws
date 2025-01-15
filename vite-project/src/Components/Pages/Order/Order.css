@@ -1,8 +1,8 @@
 .orderPageContainer {
-    background-color: rgba(245, 251, 252, 1);
+    background-color: var(--main-footer-background-color);
     padding: 5%;
     font-family: Arial, sans-serif;
-    color: #666;
+    /* color: #666; */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: white;
+    background-color: var(--order-item-card-background);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@
 
 .itemName {
     font-size: 1.2rem;
-    color: #333;
+    color: var(--order-card-name-fornt-color);
 }
 
 .itemPrice {
@@ -68,15 +68,15 @@
     width: 40px;
     text-align: center;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--order-card-qtyinput-outline-color);
     border-radius: 5px;
-    background-color: white;
+    background-color: var(--order-card-qtyinput-background-color);
     color: black;
 }
 
 .removeButton {
     background-color: rgba(53, 184, 190, 1);
-    color: white;
+    color: var(--font-color);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -103,14 +103,14 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--global-backgroud-color);
+    color: var(--font-color);
 }
 
 .orderButton {
     width: 625px;
     background-color: rgba(53, 184, 190, 1);
-    color: white;
+    color: var(--font-color);
     border: none;
     padding: 1rem;
     font-size: 1.2rem;
@@ -130,7 +130,7 @@
 }
 
 .navLinkOrder {
-    color: #000000;
+    color: var(--font-color);
     text-decoration: none;
     font-weight: 600;
 }

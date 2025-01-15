@@ -1,5 +1,4 @@
 .headerContainer {
-    background-color: white;
     padding-left: 5%;
     padding-right: 5%;
     display: flex;
@@ -7,11 +6,18 @@
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 100px;
+    background-color: var(--header-background-color);
 }
 
 .headerLogo {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.headerLogo:hover {
+    transform: scale(1.05);
 }
 
 .headerLogoImg {
@@ -25,7 +31,7 @@
 }
 
 .headerNavLink {
-    color: #2c2c2c;
+    color: var(--header-font-color);
     text-decoration: none;
     font-size: 16px;
     transition: color 0.3s ease;
@@ -36,7 +42,8 @@
 }
 
 .headerNavLinkHome:hover {
-    color: black;
+    transform: scale(1.05);
+    color: rgba(53, 184, 190, 1);
 }
 
 .headerNavLink:hover {
@@ -46,6 +53,10 @@
 .headerCart {
     display: flex;
     align-items: center;
+}
+
+.headerCart:hover {
+    transform: scale(1.05);
 }
 
 .headerCartIcon {
@@ -58,4 +69,28 @@
     width: 40px;
     border-radius: 8px;
     padding: 10px;
+}
+
+.themeSwitcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.themeSwitcher:hover {
+    background-color: var(--text-color);
+}
+
+.themeIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.activeLink {
+    text-decoration: underline;
 }

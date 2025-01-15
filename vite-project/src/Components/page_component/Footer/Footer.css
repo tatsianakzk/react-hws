@@ -1,9 +1,11 @@
+@import './../../../context/Themes.css';
+
 .footer {
     display: flex;
     flex-direction: column;
     padding-top: 100px;
     padding: 0 120px;
-    background-color: rgba(245, 251, 252, 1);
+    background-color: var(--main-footer-background-color);
     margin-top: auto;
 }
 
@@ -14,7 +16,6 @@
     margin-bottom: 40px;
     width: 100%;
     border-top: 1px solid #e0e0e0;
-    color: black;
     padding-top: 20px;
 }
 
@@ -29,11 +30,9 @@
 
 .footerDescription {
     font-size: 15px;
-    color: #4a4a4a;
 }
 
 .footerLink {
-    color: #4a4a4a;
     text-decoration: none;
     margin-bottom: 10px;
     font-size: 1rem;
@@ -51,7 +50,6 @@
     text-align: center;
     padding: 20px 0;
     border-top: 1px solid #e0e0e0;
-    color: black;
     padding-top: 70px;
     padding-bottom: 70px;
 }

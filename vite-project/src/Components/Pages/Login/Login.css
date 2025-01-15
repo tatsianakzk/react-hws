@@ -3,12 +3,12 @@
     justify-content: center;
     align-items: center;
     height: 800px;
-    background-color: #f8fcfd;
+    background-color: var(--main-footer-background-color);
     margin: 0;
 }
 
 .loginBox {
-    background: #fff;
+    background-color: var(--global-background-color);
     padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -18,7 +18,6 @@
 
 .loginBox h2 {
     color: #3ba4a4;
-    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -30,19 +29,19 @@
 .formGroup label {
     display: block;
     font-size: 14px;
-    color: #333;
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .formGroup input {
     width: 100%;
     padding: 10px;
     font-size: 14px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--loginform-input-outlone-color);
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #fff;
-    color: #000;
+    background-color: var(--loginform-input-background-color);
+    color: var(--card-input-background-color);
 }
 
 .buttonGroup {
@@ -53,7 +52,7 @@
 
 .submitButton {
     background-color: #3ba4a4;
-    color: #fff;
+    color: var(--button-font-color);
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
@@ -67,9 +66,9 @@
 }
 
 .cancelButton {
-    background-color: #fff;
+    background-color: var(--login-cancel-button-backgroud-color);
     color: #333;
-    border: 1px solid #ccc;
+    border: 1px solid var(--login-cancel-button-outline-color);
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;

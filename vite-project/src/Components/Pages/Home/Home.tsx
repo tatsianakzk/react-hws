@@ -13,9 +13,9 @@ const HomeContainer = styled.main`
   align-items: center;
   justify-content: space-between;
   padding: 10%;
-  background-color: rgba(245, 251, 252, 1);
+  background-color: var( --main-footer-background-color);
   font-family: Arial, sans-serif;
-  color: black;
+  color: var(--font-color);
 `;
 
 const HomeContent = styled.div`
@@ -41,8 +41,8 @@ const HomeDescription = styled.p`
 `;
 
 const Button = styled.button`
-  background-color: rgba(53, 184, 190, 1);
-  color: white;
+  background-color: var( --button-background-color);
+  color: var(--button-font-color);
   border: none;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -54,16 +54,6 @@ const Button = styled.button`
   &:hover {
     background-color: rgba(45, 150, 155, 1);
     transform: scale(1.05);
-  }
-
-  &:active {
-    background-color: rgba(40, 135, 140, 1);
-    transform: scale(0.95);
-  }
-
-  &:disabled {
-    background-color: rgba(200, 200, 200, 1);
-    cursor: not-allowed;
   }
 `;
 
@@ -90,7 +80,6 @@ const Trustpilot = styled.div`
 
   .reviewText {
     font-size: 0.9rem;
-    color: #777;
 
     .trustpilot-rating {
       color: rgba(53, 184, 190, 1);

@@ -4,9 +4,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 5%;
-    background-color: rgba(245, 251, 252, 1);
     color: #666;
     font-family: inter;
+    background-color: var(--main-footer-background-color);
 }
 
 
