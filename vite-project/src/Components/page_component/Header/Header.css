@@ -37,15 +37,6 @@
     transition: color 0.3s ease;
 }
 
-.headerNavLinkHome {
-    color: rgba(53, 184, 190, 1);
-}
-
-.headerNavLinkHome:hover {
-    transform: scale(1.05);
-    color: rgba(53, 184, 190, 1);
-}
-
 .headerNavLink:hover {
     color: rgba(53, 184, 190, 1);
 }
@@ -92,5 +83,6 @@
 }
 
 .activeLink {
+    color: rgba(53, 184, 190, 1);
     text-decoration: underline;
 }

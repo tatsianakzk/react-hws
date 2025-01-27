@@ -2,24 +2,32 @@
     "compilerOptions": {
         "target": "es6",
         "module": "esnext",
-        "jsx": "react-jsx",
+        "jsx": "react",
         "strict": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "moduleResolution": "Node",
         "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "types": [
+            "react",
+            "react-dom",
+            "jest"
+        ],
         "lib": [
             "dom",
             "esnext"
         ],
-        "types": [
-            "react",
-            "react-dom"
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/types"
         ]
     },
     "include": [
         "src/**/*",
-        "declarations.d.ts"
+        "declarations.d.ts",
+        "vitest.config.ts",
+        " setupTests.ts"
     ],
     "exclude": [
         "node_modules"

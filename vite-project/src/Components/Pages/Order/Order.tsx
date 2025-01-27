@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Order.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../../../redux/store';
-import { updateQuantity, removeFromCart } from '../../../redux/slices/orderSlice';
+import { updateQuantity, removeFromCart, updateAddress, setError } from '../../../redux/slices/orderSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../reusable_components/Button/Button';
 
@@ -11,18 +11,16 @@ const OrderPage: React.FC = () => {
     const navigate = useNavigate();
 
     const cartItems = useSelector((state: RootState) => state.order.items);
-
-    const [street, setStreet] = useState<string>('');
-    const [house, setHouse] = useState<string>('');
-    const [error, setError] = useState<string | null>(null);
+    const address = useSelector((state: RootState) => state.order.address);
+    const error = useSelector((state: RootState) => state.order.error);
 
     const handleOrderClick = (): void => {
-        if (!street.trim() || !house.trim()) {
-            setError('Please provide both street and house information.');
+        if (!address.street.trim() || !address.house.trim()) {
+            dispatch(setError('Please provide both street and house information.'));
             return;
         }
 
-        setError(null);
+        dispatch(setError(null));
         navigate('/successOrder');
     };
 
@@ -33,6 +31,10 @@ const OrderPage: React.FC = () => {
 
     const handleRemoveItem = (id: string): void => {
         dispatch(removeFromCart(id));
+    };
+
+    const handleAddressChange = (field: 'street' | 'house', value: string): void => {
+        dispatch(updateAddress({ ...address, [field]: value }));
     };
 
     if (cartItems.length === 0) {
@@ -82,15 +84,15 @@ const OrderPage: React.FC = () => {
                 <input
                     type="text"
                     placeholder="Street"
-                    value={street}
-                    onChange={(e) => setStreet(e.target.value)}
+                    value={address.street}
+                    onChange={(e) => handleAddressChange('street', e.target.value)}
                     className="addressInput"
                 />
                 <input
                     type="text"
                     placeholder="House"
-                    value={house}
-                    onChange={(e) => setHouse(e.target.value)}
+                    value={address.house}
+                    onChange={(e) => handleAddressChange('house', e.target.value)}
                     className="addressInput"
                 />
                 {error && <div className="errorMessage">{error}</div>}

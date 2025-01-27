@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                 </Link>
             </div>
             <nav className="headerNav">
-                <Link to="/" className={`headerNavLinkHome ${isActive("/")}`}>Home</Link>
+                <Link to="/" className={`headerNavLink ${isActive("/")}`}>Home</Link>
                 <Link to="/menu" className={`headerNavLink ${isActive("/menu")}`}>Menu</Link>
                 <Link to="/company" className={`headerNavLink ${isActive("/company")}`}>Company</Link>
                 <Link to="/login" className={`headerNavLink ${isActive("/login")}`}>Login</Link>

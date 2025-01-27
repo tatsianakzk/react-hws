@@ -8,12 +8,24 @@ interface OrderItem {
     image: string;
 }
 
+interface Address {
+    street: string;
+    house: string;
+}
+
 interface OrderState {
     items: OrderItem[];
+    address: Address;
+    error: string | null;
 }
 
 const initialState: OrderState = {
     items: [],
+    address: {
+        street: '',
+        house: '',
+    },
+    error: null,
 };
 
 const orderSlice = createSlice({
@@ -37,8 +49,20 @@ const orderSlice = createSlice({
         removeFromCart: (state, action: PayloadAction<string>) => {
             state.items = state.items.filter(item => item.id !== action.payload);
         },
+        updateAddress: (state, action: PayloadAction<Address>) => {
+            state.address = action.payload;
+        },
+        setError: (state, action: PayloadAction<string | null>) => {
+            state.error = action.payload;
+        },
     },
 });
 
-export const { addItemToOrder, updateQuantity, removeFromCart } = orderSlice.actions;
+export const {
+    addItemToOrder,
+    updateQuantity,
+    removeFromCart,
+    updateAddress,
+    setError
+} = orderSlice.actions;
 export default orderSlice.reducer;
