@@ -3,20 +3,19 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
     border-radius: 20px;
     padding: 25px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--card-outline);
     max-width: 450px;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: var(--card-background-color);
     width: 580px;
     height: 200px;
 }
 
 
-.description-price-input {
+.descriptionPriceInput {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -24,13 +23,13 @@
 
 }
 
-.description-price {
+.descriptionPrice {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.card-image {
+.cardImage {
     width: 120px;
     height: 120px;
     border-radius: 8px;
@@ -41,7 +40,7 @@
 
 
 .CardInput {
-    background-color: white;
+    background-color: var(--card-input-background-color);
     color: black;
     font-size: 15px;
     width: 60px;
@@ -49,7 +48,7 @@
     border-radius: 6px;
     outline: none;
     box-shadow: none;
-    border: 1px solid #918f8f;
+    border: 1px solid var(--card-input-outline-color);
     margin-right: 3%;
     text-align: center;
 }
@@ -62,4 +61,8 @@
 
 .CardInputLine {
     display: flex;
+}
+
+.AddToCartBtn:hover {
+    background-color: rgba(45, 150, 155, 1);
 }

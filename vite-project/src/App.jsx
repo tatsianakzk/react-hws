@@ -1,19 +1,17 @@
-import React from 'react';
-import './App.css'
-import Header from './Components/page_component/Header/Header'
-import Main from './Components/page_component/Main/Main'
-import Footer from './Components/page_component/Footer/Footer'
 
-function App() {
+import './App.css';
+import Header from './Components/page_component/Header/Header';
+import Footer from './Components/page_component/Footer/Footer';
+import AppRoutes from "./Routes";
 
-
+const App = () => {
   return (
     <>
       <Header />
-      <Main />
+      <AppRoutes />
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
